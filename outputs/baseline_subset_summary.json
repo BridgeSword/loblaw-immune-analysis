@@ -1,0 +1,22 @@
+{
+  "filter": {
+    "condition": "melanoma",
+    "sample_type": "PBMC",
+    "treatment": "miraclib",
+    "time_from_treatment_start": 0,
+    "note": "quintazide is mentioned for completeness, but it is not a treatment value in this dataset."
+  },
+  "sample_count_by_project": {
+    "prj1": 384,
+    "prj3": 272
+  },
+  "subjects_by_response": {
+    "no": 325,
+    "yes": 331
+  },
+  "subjects_by_sex": {
+    "F": 312,
+    "M": 344
+  },
+  "melanoma_male_responder_avg_b_cells_time0": 10401.28
+}
