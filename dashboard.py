@@ -27,6 +27,7 @@ st.set_page_config(
     page_title="Loblaw Bio Immune Trial",
     page_icon="LB",
     layout="wide",
+    menu_items={},
 )
 
 
@@ -60,6 +61,17 @@ frequency_summary["response_filter"] = frequency_summary["response"].fillna(
 st.markdown(
     """
     <style>
+    header[data-testid="stHeader"],
+    div[data-testid="stToolbar"],
+    div[data-testid="stDecoration"],
+    div[data-testid="stStatusWidget"],
+    div[data-testid="stHeaderActionElements"],
+    button[kind="header"],
+    .stDeployButton,
+    #MainMenu {
+        display: none !important;
+        visibility: hidden !important;
+    }
     .block-container {padding-top: 1.4rem; padding-bottom: 2rem;}
     div[data-testid="stMetric"] {
         border: 1px solid #d8dde3;
