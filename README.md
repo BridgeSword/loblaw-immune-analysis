@@ -20,7 +20,7 @@ Running `make pipeline` creates:
 
 - `immune_trial.db`: SQLite database in the repository root.
 - `outputs/frequency_summary.csv`: required Part 2 table with `sample`, `total_count`, `population`, `count`, and `percentage`.
-- `outputs/miraclib_response_statistics.csv`: Mann-Whitney U response comparison for melanoma PBMC samples treated with miraclib.
+- `outputs/miraclib_response_statistics.csv`: Mann-Whitney U response comparison for melanoma PBMC samples treated with miraclib, including raw p-values and Benjamini-Hochberg q-values.
 - `plots/miraclib_response_boxplot.png`: response vs non-response boxplot for every immune cell population.
 - `outputs/baseline_melanoma_miraclib_pbmc_samples.csv`: Part 4 baseline sample subset.
 - `outputs/baseline_subset_summary.json`: Part 4 project, response, sex, and average B-cell summary.
@@ -55,7 +55,7 @@ For Part 3, the program filters to:
 - `treatment = miraclib`
 - `sample_type = PBMC`
 
-For each immune population, it compares relative frequency percentages between responders (`response = yes`) and non-responders (`response = no`) using a two-sided Mann-Whitney U test. The output also includes Benjamini-Hochberg adjusted q-values and flags populations significant at FDR 0.05.
+For each immune population, it compares relative frequency percentages between responders (`response = yes`) and non-responders (`response = no`) using a two-sided Mann-Whitney U test. The output includes both unadjusted p-value flags and Benjamini-Hochberg adjusted q-values. In this dataset, `cd4_t_cell` is below raw p < 0.05, but no population remains significant at FDR 0.05.
 
 ## Part 4 Query Result
 
@@ -65,3 +65,5 @@ The baseline subset is melanoma PBMC samples at `time_from_treatment_start = 0` 
 - responder and non-responder subject counts
 - male and female subject counts
 - average B-cell count for melanoma male responders at time 0, rounded to two decimals
+
+For the provided CSV, the melanoma male responder average B-cell count at time 0 is `10401.28`.
